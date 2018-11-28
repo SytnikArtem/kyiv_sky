@@ -11,27 +11,36 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: #ffffff
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: #ffffff
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #ffffff
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: #ffffff
 	opacity: 1
+
+input:focus::-webkit-input-placeholder
+	color: transparent
+
+input:focus::-moz-placeholder
+	color: transparent
+
+input:focus::-ms-input-placeholder
+	color: transparent
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: #ffffff
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: #ffffff
 body, html
 	overflow-x: hidden!important
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
@@ -72,6 +81,9 @@ img
 	display: block
 	max-width: 100%
 	height: auto
+.sup
+	font-size: 0.7em
+	vertical-align: top
 .btn
 	cursor: pointer
 	outline: none
@@ -172,7 +184,7 @@ img
 		align-items: center
 	&-left
 		width: 50%
-		padding-right: 5.5%
+		padding-right: 100px
 		position: relative
 		min-height: 100vh
 		display: flex
@@ -298,7 +310,7 @@ img
 		bottom: 0
 		z-index: 2
 		display: flex
-		padding: 0 5%
+		padding: 0 60px
 		justify-content: flex-end
 		align-items: center
 		&-over
@@ -345,6 +357,7 @@ img
 		margin: 0 35px
 		&_big
 			width: 100%
+
 	&-slide
 		background: url(../img/gallery1.jpg) no-repeat center top
 		background-size: cover
@@ -403,6 +416,11 @@ img
 		transform: rotate(90deg)
 		pointer-events: auto
 		transition: all .5s ease
+		pointer-events: auto
+		opacity: 1
+		&.hide
+			opacity: 0
+			pointer-events: none
 		&:hover
 			background-color: rgba(255, 255, 255, 0.5)
 	&-right
@@ -540,14 +558,20 @@ img
 			transform: rotate(-90deg)
 			top: 34%
 			right: -145%
+			&_left
+				position: absolute
+				transform: rotate(-90deg)
+				left: -60px
+				top: 45%
 	&-right
 		width: 50%
+		height: 100vh
 .left-line
 	position: fixed
 	top: 50%
 	transform: translateY(-50%)
 	left: 60px
-	z-index: 2
+	z-index: 6
 	font-family: "ProximaNovaBlack"
 	font-size: 13px
 	text-transform: uppercase
@@ -677,6 +701,8 @@ img
 	&.active
 		opacity: 1
 		pointer-events: auto
+		.fifth-left-block
+			pointer-events: auto
 	&-close
 		opacity: 0
 		transition: all .5s ease
@@ -885,7 +911,6 @@ img
 .news
 	background: #282524
 	height: 100vh
-	overflow: hidden
 	&-flex
 		display: flex
 		justify-content: space-between
@@ -909,11 +934,15 @@ img
 			line-height: 0.93
 			max-width: 430px
 			margin: 30px 0 25px
+			&_dark
+				color: #282524
 		&-description
 			color: #a5a2a1
 			font-family: "ProximaNova"
 			font-size: 14px
 			font-style: italic
+		&-slider
+			width: 100%
 	&-block
 		position: absolute
 		left: 0
@@ -955,6 +984,8 @@ img
 		letter-spacing: 4.78px
 		&-line
 			margin: 0 5px
+		&-current
+			width: 15px
 	&-btn
 		font-family: "BebasNeueBold"
 		font-size: 20px
@@ -970,6 +1001,8 @@ img
 			background: rgba(255, 255, 255, 0.3)
 	&-right
 		width: 50%
+		height: 100vh
+		overflow: hidden
 		&-slider
 			height: calc(100vh - 19vw)
 		&-down
@@ -979,6 +1012,7 @@ img
 		transition: all .5s ease-in-out
 		transform: scale(1.2)
 		position: relative
+		overflow: hidden
 		&:before
 			position: absolute
 			left: 0
@@ -1007,6 +1041,72 @@ img
 			background: url(../img/news1.jpg) no-repeat center
 			transform-origin: 50% 0 0
 			background-size: cover
+	&-more
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		min-height: 100vh
+		z-index: 4
+		opacity: 0
+		pointer-events: none
+		transition: all .5s ease
+		&.active
+			opacity: 1
+			pointer-events: auto
+		&-overlay
+			width: 100%
+			position: absolute
+			height: 100%
+			top: 0
+			left: 0
+			display: block
+			background: #00b5e5
+			z-index: -1
+		&-content
+			max-width: 545px
+			margin: 0 auto
+			padding: 35px 0 0
+			position: relative
+			left: 4%
+		&-row
+			padding: 18px 0
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+			&:last-child
+				border-bottom: none
+		&-link
+			color: #ffffff
+			text-decoration: none
+			display: inline-block
+		&-name
+			font-family: "ProximaNovaExtraBold"
+			font-size: 34px
+			color: #ffffff
+			margin-bottom: 10px
+		&-date
+			color: rgba(255, 255, 255, 0.6)
+			font-family: "ProximaNova"
+			font-size: 12px
+			font-style: italic
+		&-title
+			position: absolute
+			color: rgba(255, 255, 255, 0.5)
+			font-family: "BebasNeueBold"
+			font-size: 50px
+			text-transform: uppercase
+			letter-spacing: 14.94px
+			transform: rotate(-90deg)
+			left: -35%
+			top: 125px
+		&-close
+			position: absolute
+			top: 50px
+			right: 40px
+			cursor: pointer
+		&-main
+			max-height: calc(100vh - 35px)
+			overflow: auto
+			padding-bottom: 35px
 .slick-current
 	.news-slide
 		transform: scale(1)
@@ -1042,4 +1142,433 @@ img
 			font-size: 12px
 			font-style: italic
 			color: #a5a2a1
+.news-more-main::-webkit-scrollbar
+	width: 0
+.page-content::-webkit-scrollbar
+	width: 0
+.news-more-main, .page-content
+	-ms-overflow-style: none
+.news-more-main, .page-content
+	overflow: -moz-scrollbars-none
+.page
+	&-flex
+		display: flex
+		height: 100vh
+	&-left
+		width: 50%
+	&-right
+		width: 50%
+		background: url(../img/page_bg.jpg) no-repeat center
+		background-size: cover
+		position: relative
+		&:before
+			position: absolute
+			left: 0
+			top: 0
+			content: ''
+			width: 100%
+			height: 100%
+			background: rgba(40, 37, 36, 0.5)
+	&-content
+		padding: 0px 0 60px
+		margin-top: 200px
+		max-height: calc(100vh - 200px)
+		overflow: auto
+		&-block
+			max-width: 555px
+			margin: 0 auto
+			padding-left: 8%
+			padding-right: 2%
+			box-sizing: content-box
+		&-text
+			color: #282524
+			font-family: "ProximaNova"
+			font-size: 15px
+			line-height: 1.6
+			text-align: justify
+			margin-bottom: 25px
+		&-center
+			padding: 45px 0 30px
+			border-bottom: 2px solid rgba(196, 191, 189, 0.2)
+	&-down
+		&-flex
+			display: flex
+			justify-content: space-between
+			margin-top: 50px
+		&-link
+			text-decoration: none
+			color: #282524
+			font-family: "BebasNeueBold"
+			font-size: 16px
+			text-transform: uppercase
+			letter-spacing: 4.78px
+			padding: 5px 0
+			display: inline-block
+		&-left
+			max-width: 250px
+			&-link
+				display: inline-block
+				text-decoration: none
+		&-text
+			color: #827e7d
+			font-family: "ProximaNovaBold"
+			font-size: 12px
+			letter-spacing: 3.59px
+		&-title
+			color: #282524
+			font-family: "ProximaNovaExtraBold"
+			font-size: 34px
+			line-height: 0.89
+			margin: 15px 0 10px
+		&-description
+			color: #a5a2a1
+			font-family: "ProximaNova"
+			font-size: 12px
+			font-style: italic
+		&-item
+			margin-bottom: 15px
+		&-right
+			padding-right: 10px
+			padding-left: 40px
+			border-left: 2px solid #f3f2f2
+.plan
+	background: #282524
+	height: 100vh
+	&-flex
+		display: flex
+		justify-content: space-between
+		height: 100vh
+	&-left
+		padding-top: 200px
+		padding-left: 60px
+		width: 270px
+		flex-shrink: 0
+		box-sizing: content-box
+	&-title
+		font-family: "BebasNeueBold"
+		font-size: 50px
+		line-height: 0.96
+		letter-spacing: 14.94px
+	&-number
+		color: #00b5e5
+		font-family: "BebasNeueBold"
+		font-size: 64px
+		letter-spacing: 6.38px
+		position: absolute
+		left: 60px
+		top: 0
+	&-right
+		width: 75%
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		&:before
+			position: absolute
+			top: 0
+			right: 0
+			width: 66.6%
+			height: 100%
+			content: ''
+			background: url(../img/plus.jpg) repeat
+			z-index: 1
+		&-content
+			width: 100%
+	&-slider
+		position: relative
+		z-index: 2
+		&-item
+			text-align: right
+			padding-right: 160px
+			position: relative
+			img
+				display: inline-block
+	&-btn
+		width: 40px
+		height: 40px
+		background-color: #eb6a31
+		cursor: pointer
+		position: absolute
+		font-family: "BebasNeueBold"
+		font-size: 14px
+		line-height: 40px
+		letter-spacing: 1.39px
+		text-align: center
+		bottom: 23%
+		right: 0
+		transition: all .5s ease
+		&:hover
+			background: #00b5e5
+			&~.plan-info
+				opacity: 1
+	&-info
+		position: absolute
+		left: 0
+		padding: 25px 30px
+		box-shadow: 5px 30px 40px rgba(0, 0, 0, 0.3)
+		background-color: #312e2d
+		bottom: 0
+		width: 150px
+		opacity: 0
+		pointer-events: none
+		transition: all .5s ease
+		&-title
+			font-family: "BebasNeueBold"
+			font-size: 14px
+			text-transform: uppercase
+			letter-spacing: 6.28px
+			text-align: center
+		&-subtitle
+			color: #00b1e1
+			font-family: "BebasNeueBold"
+			font-size: 34px
+			text-transform: uppercase
+			letter-spacing: 6.77px
+			text-align: center
+			margin: 10px 0
+		&-block
+			border-top: 1px solid rgba(228, 228, 228, 0.1)
+			display: flex
+			text-align: left
+			padding-top: 15px
+		&-left
+			width: 50%
+		&-right
+			width: 50%
+			padding-left: 13px
+			border-left: 1px solid #3b3838
+		&-number
+			font-family: "BebasNeueBold"
+			font-size: 24px
+			line-height: 0.83
+		&-text
+			color: rgba(255, 255, 255, 0.3)
+			font-family: "ProximaNovaBold"
+			font-size: 14px
+			line-height: 0.7
+			margin-top: 7px
+	&-show
+		position: absolute
+		width: 210px
+		height: 175px
+		right: 865px
+		bottom: 10%
+.room
+	height: 100vh
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	background: #282524
+	z-index: 3
+	transform: translateX(-100%)
+	transition: all .5s ease
+	&.active
+		transform: translateX(0)
+	&-flex
+		display: flex
+		justify-content: space-between
+		height: 100vh
+	&-left
+		width: 50%
+		padding-left: 10%
+		display: flex
+		align-items: center
+	&-title
+		font-family: "BebasNeueBold"
+		font-size: 18px
+		letter-spacing: 5.38px
+	&-number
+		text-decoration: underline
+	&-top
+		display: flex
+		justify-content: flex-start
+		margin-top: 35px
+		&-item
+			padding-right: 50px
+			margin-right: 45px
+			border-right: 1px solid rgba(255, 255, 255, 0.1)
+			&:last-child
+				border-right: none
+				margin-right: 0
+		&-number
+			font-family: "BebasNeueBold"
+			font-size: 64px
+			font-weight: 400
+			line-height: 0.85
+			margin-bottom: 5px
+		&-text
+			color: rgba(255, 255, 255, 0.3)
+			font-family: "ProximaNovaBold"
+			font-size: 16px
+			&_sm
+				font-family: "ProximaNovaBold"
+				font-size: 16px
+				display: inline-block
+	&-center
+		display: flex
+		justify-content: space-between
+		margin-top: 65px
+	&-list
+		width: calc(50% - 40px)
+	&-item
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-bottom: 5px
+		margin-bottom: 25px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+		&-text
+			color: rgba(255, 255, 255, 0.5)
+			font-family: "ProximaNova"
+			font-size: 15px
+		&-number
+			font-family: "ProximaNovaBold"
+			font-size: 15px
+	&-content
+		max-width: 520px
+		width: 100%
+	&-btn
+		font-family: "BebasNeueBold"
+		font-size: 16px
+		text-transform: uppercase
+		letter-spacing: 3.19px
+		color: #ffffff
+		line-height: 50px
+		padding: 0 17px
+		border: none
+		background-color: #00b5e5
+		margin-right: 40px
+	&-save
+		font-family: "BebasNeueBold"
+		font-size: 16px
+		text-transform: uppercase
+		letter-spacing: 3.19px
+		color: #ffffff
+		text-decoration: none
+	&-right
+		width: 50%
+		background: url(../img/plus.jpg) repeat
+		display: flex
+		align-items: center
+		justify-content: center
+	&-close
+		width: 50px
+		height: 50px
+		border: 2px solid rgba(255, 255, 255, 0.2)
+		background: url(../img/arrow-next.svg) no-repeat center
+		background-size: 8px 12px
+		transform: rotate(180deg)
+		transition: all .5s ease
+		pointer-events: none
+		opacity: 0
+		transition: all .5s ease
+		&:hover
+			background-color: rgba(255, 255, 255, 0.3)
+		&.active
+			opacity: 1
+			pointer-events: auto
+.map
+	width: 100%
+	height: 100%
+.gm-fullscreen-control
+	display: none
+.footer
+	&-left
+		font-size: 0
+		width: 200px
+		position: relative
+	&-soc
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		pointer-events: none
+		transition: all .5s ease
+		width: 100%
+		height: 100%
+		display: flex
+		justify-content: flex-start
+		&.show
+			opacity: 1
+			pointer-events: auto
+.soc
+	&-btn
+		width: 50px
+		height: 50px
+		border: 2px solid rgba(255, 255, 255, 0.2)
+		transition: all .5s ease
+		border-right: none
+		display: flex
+		align-items: center
+		justify-content: center
+		img
+			width: 20px
+		&:hover
+			background-color: rgba(255, 255, 255, 0.5)
+		&:last-child
+			border-right: 2px solid rgba(255, 255, 255, 0.2)
+.popup
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: rgba(27, 25, 25, 0.4)
+	display: flex
+	align-items: center
+	justify-content: center
+	opacity: 0
+	pointer-events: none
+	transition: all .5s ease
+	&.active
+		opacity: 1
+		pointer-events: auto
+	&-content
+		width: 400px
+		padding: 30px 40px 40px
+		background: #282524
+		position: relative
+	&-title
+		font-family: "BebasNeueBold"
+		font-size: 50px
+		line-height: 0.96
+		letter-spacing: 14.94px
+	&-form
+		margin-top: 40px
+	&-input
+		width: 100%
+		background: transparent
+		border: 2px solid rgba(255, 255, 255, 0.1)
+		font-family: "ProximaNova"
+		font-size: 16px
+		line-height: 46px
+		padding: 0 20px
+		margin-bottom: 10px
+		outline: none
+
+	&-btn
+		font-family: "BebasNeueBold"
+		font-size: 16px
+		text-transform: uppercase
+		letter-spacing: 3.19px
+		color: #ffffff
+		line-height: 50px
+		padding: 0 23px
+		border: none
+		background-color: #00b5e5
+		margin-top: 30px
+	&-close
+		cursor: pointer
+		position: absolute
+		top: 20px
+		right: 20px
+		&-img
+			width: 14px
+.build
+	height: 100vh
+	overflow: hidden
+	&-img
+		width: 100%
 @import "media" // Всегда в конце

@@ -27,7 +27,7 @@
 				</div>
 				<div class="header-right">
 					<a href="tel:+88005058952" class="header-phone">8 (800) 505-89-52</a>
-					<button class="header-btn btn popup-open">
+					<button class="header-btn popup-open btn">
 						<span class="hover-btn">Замовити дзвiнок</span>
 					</button>
 					<div class="header-menu-btn btn menu-open">
@@ -135,65 +135,61 @@
 		<a href="" class="right-line-link">Рус.</a>
 		<a href="" class="right-line-link active">укр.</a>
 	</div>
-	<div class="third-block third-block_fixed">
-		<div class="third-block-overlay wow widthGo"></div>
-		<div class="overflow third-block-over">
-			<div class="third-block-content wow textTop" data-wow-delay=".5s">
-				<p class="third-text">Галерея</p>
-				<span class="third-line third-line_big"></span>
-				<div class="third-arrows">
-					<div class="third-arrow third-arrow-prev">
-						<img src="img/arrow-back.svg" alt="">
+	<section class="section fifth">
+			<div class="container-fluid">
+				<div class="fifth-flex">
+					<div class="fifth-left">
+						<div class="fifth-left-overlay wow widthGo" data-wow-offset="100"></div>
+						<h2 class="fifth-left-title_left title overflow">
+							<span class="inline-block wow textLeft" data-wow-delay=".5s">контакти</span>
+						</h2>
+						<div class="fifth-left-block">
+							<div class="fifth-left-row overflow">
+								<div class="wow textTop" data-wow-delay=".5s">
+									<p class="fifth-left-subtitle">адреса</p>
+									<p class="fifth-left-text">Netherlands Antilles<br> 3081 Denesik Parkways Suite 888</p>
+								</div>
+							</div>
+							<div class="fifth-left-row overflow">
+								<div class="wow textTop" data-wow-delay=".7s">
+									<p class="fifth-left-subtitle">Телофони</p>
+									<a href="tel:5150472001" class="fifth-left-link">515-047-2001</a><br>
+									<a href="tel:5150472001" class="fifth-left-link">515-047-2001</a>
+								</div>
+							</div>
+							<div class="fifth-left-row overflow">
+								<div class="wow textTop" data-wow-delay=".9s">
+									<p class="fifth-left-subtitle">графiк</p>
+									<a class="fifth-left-text">Пн-Сб: c 9:00 до 18:00</a><br>
+									<a class="fifth-left-text">Вс: c 10:00 до 17:00</a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="third-arrow third-arrow-next">
-						<img src="img/arrow-next.svg" alt="">
+					<div class="fifth-right">
+						<div id="map" class="map"></div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="ancors" id="myMenu">
-		<div class="ancors-row show">
-			<div class="ancors-row-line"></div>
-			<a href="#firstPage" class="ancors-text">Архiтектура</a>
-			<p  class="ancors-number">01</p>
-		</div>
-		<div class="ancors-row">
-			<div class="ancors-row-line"></div>
-			<a href="#secondPage" class="ancors-text">Інтер’єр</a>
-			<p class="ancors-number">02</p>
-		</div>
-		<div class="ancors-row">
-			<a href="#thirdPage" class="ancors-text">Візуалізація</a>
-			<p class="ancors-number">03</p>
-		</div>
-	</div>
-	<div id="fullpage2">
-		<section class="section third gallery">
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
 		</section>
-		<section class="section third gallety">
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-		</section>
-		<section class="section third gallety">
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-			<div class="slide third-slide"></div>
-		</section>
-	</div>
 	<footer class="footer">
 		<div class="container">
-			<div class="footer-flex footer-flex-right">
+			<div class="footer-flex">
+				<div class="footer-left">
+					<button class="footer-btn btn"></button>
+					<div class="footer-soc">
+						<a href="" class="soc-btn btn">
+							<img src="img/whatsapp.svg" alt="" >
+						</a>
+						<a href="" class="soc-btn btn">
+							<img src="img/viber.svg" alt="">
+						</a>
+						<a href="" class="soc-btn btn">
+							<img src="img/telegram.svg" alt="">
+						</a>
+					</div>
+				</div>
+
 				<div class="footer-right">
 					<p class="footer-text">© KyivSky 2018. Розробка та підтримка</p>
 					<img src="img/youfuture.svg" alt="" width="105" class="footer-img">
@@ -203,7 +199,9 @@
 	</footer>
 
 	<script src="js/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlAd-i0lx9TWfwCnbhqTsglGrCBpNHW5k"></script>
 	<script src="js/libs.min.js"></script>
+	<script src="libs/map.js"></script>
 	<script src="js/common.js"></script>
 
 </body>
