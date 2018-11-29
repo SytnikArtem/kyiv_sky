@@ -3,25 +3,508 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
-
-
+@media only screen and (max-width : 1439px)
+  .main-left-item
+    font-size: 160px
+  .main-left
+    padding-right: 70px
+  .footer-text
+    font-size: 12px
+  .main-right
+    padding-right: 8.5%
+  .second-right-content
+    max-width: 280px
+    left: 0
+  .second-right-text
+    font-size: 14px
+  .third-line
+    width: 95px
+    margin: 0 20px
+  .fourth-slider-block
+    width: 300px
+  .fourth-slider-block
+    padding: 30px 20px 30px 20px
+  .fifth-left-title
+    right: -100%
+  .news-block-line
+    width: 40px
+    margin: 0 15px
+  .news-more
+    width: 100%
+  .page-down-title
+    font-size: 24px
+  .plan-slider-item
+    text-align: left
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
-
-
+@media only screen and (max-width : 1023px)
+  .header-btn, .header-img, .footer-btn, .left-line, .right-line
+    display: none
+  .header-img_mob
+    display: block
+    width: 50px
+  .main-left-item
+    font-size: 120px
+  .main-left
+    min-height: auto
+    padding: 150px 50px 150px 0
+  .main-btn
+    width: 50px
+    height: 50px
+    padding: 0
+    background-position: center
+    .hover-btn
+      display: none
+  .footer
+    position: static
+    background: #00b5e5
+    padding: 40px 0
+    &_fixed
+      position: fixed
+      background: transparent
+      padding-bottom: 60px
+      .footer-flex-right
+        flex-direction: row
+        justify-content: flex-end
+      .footer-right
+        width: 265px
+        flex-direction: column
+        align-items: flex-start
+  .main-right
+    padding-right: 46px
+  .main-right-text
+    font-size: 40px
+  .header
+    padding: 30px 0
+  .container
+    padding: 0 40px
+  .second-right-title
+    position: static
+    transform: none
+    margin-bottom: 40px
+  .second-flex
+    min-height: auto
+  .second-right
+    padding: 100px 0 40px
+  .third-slide
+    height: 100vh
+  .third-left
+    align-items: flex-start
+    padding-left: 40px
+    width: 100%
+    pointer-events: none
+    padding-top: 75px
+  .fourth
+    padding: 100px 0 200px
+  .fifth-left-title
+    position: static
+    transform: none
+    margin-bottom: 40px
+  .fifth-left
+    min-height: auto
+    justify-content: flex-start
+    padding: 100px 20px 100px 40px
+  .fifth-right
+    height: auto
+  .fifth-flex
+    align-items: stretch
+  .fifth-left-block
+    width: 100%
+  .footer-soc
+    opacity: 1
+    pointer-events: auto
+    height: 50px
+  .footer-left
+    height: 50px
+  .footer-flex
+    flex-direction: column-reverse
+    align-items: flex-start
+  .footer-text
+    font-size: 14px
+  .footer-left
+    margin-top: 20px
+  .menu-header
+    padding-top: 30px
+    position: relative
+  .menu .footer
+    position: relative
+    background: transparent
+  .menu
+    min-height: 100vh
+    height: 100vh
+  .menu-center
+    height: auto
+    padding: 0
+  .menu-item-link
+    font-size: 32px
+  .menu .right-line
+    position: relative
+    top: -35px
+    display: block
+    transform: none
+    left: calc(50% - 48px)
+    opacity: 0
+    transition: all .5s ease
+  .menu .right-line.active
+      opacity: 1
+  .menu
+    overflow: auto
+  .menu
+    .footer-flex
+      flex-direction: column
+    .fifth-left-block
+      display: flex
+      align-items: flex-start
+    .fifth-left-row:first-child
+      margin-right: 90px
+  .about-right .title
+    letter-spacing: 6px
+  .second-about-overlay
+    width: 100%
+    position: static
+    height: 60vw
+  .fifth_contact
+    .fifth-left
+      height: calc(100vh - 167px)
+      flex-direction: column
+      align-items: flex-start
+  .fifth-left-title_left
+    transform: none
+    position: static
+    margin-bottom: 30px
+  .news-left
+    padding-left: 40px
+    padding-right: 20px
+    align-items: flex-start
+  .news-left-slider
+    margin-top: 100px
+  .news-left-title
+    font-size: 50px
+  .down-right-title
+    font-size: 20px
+    padding-right: 10px
+  .news-block-flex
+    flex-direction: column
+    justify-content: center
+    padding: 0 40px
+  .news-block-left
+    margin-bottom: 20px
+  .page-flex
+    flex-direction: column-reverse
+    justify-content: flex-start
+    align-items: flex-start
+    height: auto
+  .page-right
+    width: 100%
+    height: 60vw
+  .page-left
+    width: 100%
+  .page-content
+    height: auto
+    max-height: 100%
+    margin-top: 70px
+  .plan-right
+    overflow: scroll
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	/**/
-
-
+@media only screen and (max-width : 767px)
+  .header-phone
+    position: absolute
+    width: 150px
+    text-align: center
+    top: 43px
+    margin-right: 0
+    left: 50%
+    transform: translateX(-50%)
+  .header-menu-btn
+    width: 50px
+    height: 50px
+  .main-flex
+    flex-direction: column
+    align-items: flex-start
+  .main-left
+    width: 100%
+    position: static
+    padding-right: 0
+    display: flex
+    justify-content: flex-start
+    padding-left: 40px
+  .main-btn
+    display: none
+  .main-left-title
+    text-align: left
+  .main-left-item
+    font-size: 160px
+    letter-spacing: 15.94px
+    line-height: 0.76
+  .main-left
+    padding-top: 110px
+    padding-bottom: 40px
+  .main-mask
+    background-position: left 36% bottom
+  .main-right
+    text-align: left
+    padding-bottom: 50px
+    padding-left: 40px
+  .main-btn_mob
+    display: inline-block
+    position: static
+    transform: none
+    margin-right: 20px
+  .main-right-buttons
+    display: flex
+    align-items: center
+  .second-flex
+    flex-direction: column-reverse
+  .second-right
+    width: 100%
+    padding: 65px 0 40px
+  .second-right-content
+    max-width: 100%
+    padding: 0 40px
+  .title, .third-left-title
+    font-size: 44px
+    letter-spacing: 13.15px
+  .second-right-title
+    margin-bottom: 30px
+  .second-right-text
+    font-size: 15px
+  .third-text, .third-line
+    display: none
+  .third-block
+    width: 200px
+    height: 130px
+    padding: 0 50px
+  .third-left
+    padding-top: 65px
+  .fourth-title
+    display: block
+    padding-left: 40px
+    color: rgba(255, 255, 255, 0.8)
+    font-family: "BebasNeueBold"
+    font-size: 44px
+    text-transform: uppercase
+    letter-spacing: 13.15px
+    position: relative
+    z-index: 1
+  .fourth-slider
+    left: 40px
+    margin-top: 65px
+  .fourth
+    padding: 70px 0 150px
+  .fourth-slider-block
+    width: 335px
+  .fourth-slider-title
+    max-width: 240px
+  .fifth-flex
+    flex-direction: column
+  .fifth-left
+    width: 100%
+    padding-top: 65px
+    padding-bottom: 15px
+  .fifth-left-title
+    margin-bottom: 30px
+  .fifth-right
+    width: 100%
+    height: 100vw
+  .fifth-left-row:nth-child(4), .fifth-left-row:nth-child(3)
+    display: inline-block
+    width: 49%
+    vertical-align: top
+  .menu-center
+    justify-content: flex-start
+    padding-left: 40px
+  .menu-list
+    left: 0
+  .header_fixed.active
+    background: #eb6a31
+  .about-flex
+    flex-direction: column
+  .about-left, .about-right
+    width: 100%
+  .about-right
+    height: auto
+    padding: 65px 0 45px
+  .about-left, .about-slide
+    height: 60vw
+  .fifth_contact .fifth-left
+    height: auto
+    padding-top: 100px
+  .third-block_gallery
+    width: 100%
+    .third-block-content
+      justify-content: flex-start
+  .footer_fixed .footer-right
+    width: 170px
+    text-align: right
+    align-items: flex-end
+  .footer_fixed
+    padding-bottom: 40px
+    .footer-text
+      margin-right: 0
+  .ancors
+    top: 100px
+    transform: none
+  .news-right
+    width: 100%
+    height: auto
+  .news-flex
+    flex-direction: column-reverse
+  .news-left
+    height: auto
+    display: none
+  .news-block
+    width: 100%
+    z-index: 2
+    position: fixed
+  .news-block-flex
+    flex-direction: row
+    justify-content: space-between
+  .news-block-line
+    display: none
+  .news-block-right
+    position: relative
+  .news-number
+    position: absolute
+    right: 25px
+  .news
+    height: auto
+    min-height: 100vh
+    padding-bottom: 170px
+  .news-right-slider
+    height: 60vw
+  .down
+    flex-direction: column
+    height: auto
+  .down-left
+    width: 100%
+  .down-right
+    width: 100%
+  .down-right-item
+    padding-left: 0
+  .down-left, .down-left-slider, .down-left-img
+    height: 60vw
+  .news-slider_mob
+    display: block
+    padding: 40px
+    margin-top: 0
+  .slider4
+    padding: 40px
+  .news-slide
+    height: 60vw
+  .news-more-title
+    display: none
+  .news-more-content
+    width: 100%
+    max-width: 100%
+    left: 0
+    padding: 35px 60px 0 40px
+  .news-more-close
+    top: 30px
+    right: 30px
+  .news-block-left
+    margin-bottom: 0
+  .news-left-title, .down-right-title
+    font-size: 46px
+    width: 400px
+  .news-more-name
+    font-size: 24px
+  .page-content
+    margin-top: 40px
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
-
-
+  .container
+    padding: 0 20px
+  .header
+    padding: 20px 0
+  .header-phone
+    top: 33px
+  .main-left-item
+    font-size: 130px
+  .main-left, .main-right
+    padding-left: 20px
+  .main-right
+    width: 100%
+    padding-right: 20px
+  .main-right-text
+    font-size: 32px
+  .main-right-btn
+    font-size: 14px
+  .second-right-content
+    padding: 0 20px
+  .third-left
+    padding-left: 20px
+  .title, .third-left-title, .fourth-title
+    letter-spacing: 8px
+  .fourth-title
+    padding-left: 20px
+  .fourth-slider
+    left: 20px
+  .fourth-slider-block
+    width: 280px
+  .fourth-slider-slide
+    transform: translateY(225px)
+  .fifth-left
+    padding-left: 20px
+  .footer-right
+    flex-wrap: wrap
+  .menu-center
+    padding-left: 20px
+  .menu-item-link
+    letter-spacing: 7px
+  .menu .fifth-left-row
+    margin-right: 0
+    width: 50%
+  .menu .fifth-left-row:first-child
+    margin-right: 0
+  .fifth-left-text
+    font-size: 13px
+  .menu-header
+    padding-top: 20px
+  .about-right
+    padding-left: 20px
+    padding-right: 20px
+    justify-content: flex-start
+  .ancors-text
+    margin-left: 0
+  .ancors-number, .ancors-row-line
+    display: none
+  .ancors-row
+    padding: 15px 0
+  .ancors
+    left: 20px
+  .news-slider_mob
+    padding: 40px 20px
+  .slider4
+    padding: 40px 20px
+  .news-left-title, .down-right-title
+    width: 290px
+  .news-block-flex
+    padding: 0 20px
+  .news-block-right
+    margin-left: 10px
+  .news-more-content
+    padding: 35px 35px 20px 20px
+  .page .news-left-title
+    width: 100%
+  .page-content-block
+    padding: 0 20px
+  .page-down-flex
+    flex-direction: column
+  .page-down-left
+    width: 100%
+  .page-down-right
+    width: 100%
+    padding: 30px 0 0
+    margin-top: 30px
+    border-top: 2px solid #f3f2f2
+    border-left: none
+  .page-down-left
+    max-width: 100%
+  .page-content
+    padding-bottom: 10px
+  .page-down-flex
+    margin-top: 30px
+  .page-content-center
+    padding-bottom: 0
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

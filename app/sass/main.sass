@@ -115,6 +115,7 @@ img
 	left: 0
 	width: 100%
 	z-index: 4
+	transition: all .5s ease
 	&-flex
 		display: flex
 		justify-content: space-between
@@ -178,6 +179,7 @@ img
 		background: url(../img/pic.png) no-repeat center bottom
 		background-size: cover
 		z-index: 3
+		pointer-events: none
 	&-flex
 		display: flex
 		justify-content: space-between
@@ -198,7 +200,8 @@ img
 			height: 100%
 			left: 0
 			top: 0
-			background: #00b5e5
+			background: url(../img/shine.jpg) no-repeat right bottom
+			background-size: cover
 			z-index: 1
 		&-title
 			text-align: right
@@ -237,6 +240,7 @@ img
 			padding: 0 17px
 			border: none
 			background-color: #00b5e5
+		&-buttons
 			margin-top: 40px
 	&-btn
 		background: url(../img/video.svg) #eb6a31
@@ -259,6 +263,7 @@ img
 .second
 	background: url(../img/bg_2.jpg) no-repeat center
 	background-size: cover
+	position: relative
 	&-about
 		position: relative
 		&-overlay
@@ -319,7 +324,8 @@ img
 			position: fixed
 			z-index: 3
 		&_transparent
-			background: transparent
+			.third-block-overlay
+				background: transparent
 		&-overlay
 			position: absolute
 			width: 100%
@@ -361,6 +367,7 @@ img
 	&-slide
 		background: url(../img/gallery1.jpg) no-repeat center top
 		background-size: cover
+		height: 100vh
 	&-text
 		font-family: "BebasNeueBold"
 		font-size: 16px
@@ -397,7 +404,6 @@ img
 	z-index: 4
 	&-img
 		margin-top: 3px
-		margin-left: 10px
 	&-flex
 		justify-content: space-between
 		align-items: flex-end
@@ -431,6 +437,7 @@ img
 		color: rgba(255, 255, 255, 0.71)
 		font-family: "ProximaNovaSemibold"
 		font-size: 14px
+		margin-right: 10px
 .slick-slide
 	outline: none
 .fourth
@@ -695,7 +702,7 @@ img
 	left: 0
 	width: 100%
 	height: 100%
-	z-index: 6
+	z-index: 7
 	opacity: 0
 	pointer-events: none
 	&.active
@@ -947,7 +954,7 @@ img
 		position: absolute
 		left: 0
 		bottom: 0
-		width: 100%
+		width: 50%
 		height: 170px
 		&-left
 			flex-shrink: 0
@@ -975,6 +982,7 @@ img
 			display: flex
 			align-items: center
 			justify-content: flex-end
+			margin-left: 20px
 	&-number
 		display: flex
 		align-items: center
@@ -1045,7 +1053,7 @@ img
 		position: absolute
 		top: 0
 		left: 0
-		width: 100%
+		width: 50%
 		min-height: 100vh
 		z-index: 4
 		opacity: 0
@@ -1177,8 +1185,8 @@ img
 		&-block
 			max-width: 555px
 			margin: 0 auto
-			padding-left: 8%
-			padding-right: 2%
+			padding-left: 60px
+			padding-right: 40px
 			box-sizing: content-box
 		&-text
 			color: #282524
@@ -1220,6 +1228,7 @@ img
 			font-size: 34px
 			line-height: 0.89
 			margin: 15px 0 10px
+			padding-right: 20px
 		&-description
 			color: #a5a2a1
 			font-family: "ProximaNova"
@@ -1273,7 +1282,10 @@ img
 			background: url(../img/plus.jpg) repeat
 			z-index: 1
 		&-content
-			width: 100%
+			width: 1440px
+			position: absolute
+			top: calc(50% - 220px)
+			left: 0
 	&-slider
 		position: relative
 		z-index: 2
@@ -1567,8 +1579,24 @@ img
 		&-img
 			width: 14px
 .build
-	height: 100vh
+	max-height: 100vh
+	height: 100%
 	overflow: hidden
 	&-img
 		width: 100%
+.header-img_mob
+	display: none
+.menu-scroll
+	position: relative
+	min-height: 100vh
+.main-btn_mob
+	display: none
+.fourth-title
+	display: none
+.about-right-title
+	color: #ffffff
+.news-slider_mob
+	display: none
+.plan-slider-item img
+	max-width: 980px
 @import "media" // Всегда в конце

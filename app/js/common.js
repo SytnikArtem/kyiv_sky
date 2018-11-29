@@ -1,36 +1,38 @@
 
 $(document).ready(function() {
-    $('#fullpage').fullpage({
-        scrollBar:true,
-        // menu: '#myMenu',
-        controlArrows: false,
-        // anchors: ['firstPage', 'secondPage', 'thirdPage'],
-        onLeave: function(origin, index){
-            var loadedSection = this;
-            var thisIndex = index.index + 1;
-            setTimeout(function(){
-                $('.left-line-current').text('0' + thisIndex);
-            },300);
-            var items = $('.section').length;
-            if (thisIndex == items) {
-                $('.footer-btn').addClass('hide');
-                $('.footer-soc').addClass('show')
+    if ($(window).width() > 1023) {
+        $('#fullpage').fullpage({
+            scrollBar:true,
+            controlArrows: false,
+            responsiveWidth: 1024,
+            onLeave: function(origin, index){
+                var loadedSection = this;
+                var thisIndex = index.index + 1;
+                setTimeout(function(){
+                    $('.left-line-current').text('0' + thisIndex);
+                },300);
+                var items = $('.section').length;
+                if (thisIndex == items) {
+                    $('.footer-btn').addClass('hide');
+                    $('.footer-soc').addClass('show')
+                }
+                else {
+                    $('.footer-btn').removeClass('hide');
+                    $('.footer-soc').removeClass('show')
+                }
+                console.log(items);
+                // var wow2 = new WOW(
+                //     {
+                //         boxClass:     'wow2',      // animated element css class (default is wow)
+                //         animateClass: 'animated', // animation css class (default is animated)
+                //         live:         true,       // act on asynchronously loaded content (default is true)
+                //     }
+                // );
+                // wow2.init();
             }
-            else {
-                $('.footer-btn').removeClass('hide');
-                $('.footer-soc').removeClass('show')
-            }
-            console.log(items);
-            // var wow2 = new WOW(
-            //     {
-            //         boxClass:     'wow2',      // animated element css class (default is wow)
-            //         animateClass: 'animated', // animation css class (default is animated)
-            //         live:         true,       // act on asynchronously loaded content (default is true)
-            //     }
-            // );
-            // wow2.init();
-        }
-    });
+        });
+    }
+
     var items = $('.section').length;
     if (items == 1) {
         $('.footer-btn').addClass('hide');
@@ -55,7 +57,7 @@ $(document).ready(function() {
             boxClass:     'wow',      // animated element css class (default is wow)
             animateClass: 'animated', // animation css class (default is animated)
             offset:       0,          // distance to the element when triggering the animation (default is 0)
-            mobile:       true,       // trigger animations on mobile devices (default is true)
+            mobile:       false,       // trigger animations on mobile devices (default is true)
             live:         true,       // act on asynchronously loaded content (default is true)
             callback:     function(box) {
                 // the callback is fired every time an animation is started
@@ -67,26 +69,60 @@ $(document).ready(function() {
     wow.init();
 
     $('.third-arrow-next').click(function(){
-        fullpage_api.moveSlideRight();
+        $('.third-slider').slick('slickNext')
     });
     $('.third-arrow-prev').click(function(){
+        $('.third-slider').slick('slickPrev')
+    });
+    $('.gallery_next').click(function(){
+        fullpage_api.moveSlideRight();
+    });
+    $('.gallery_prev').click(function(){
         fullpage_api.moveSlideLeft();
     });
     $('.fourth-slider').slick({
         slidesToShow: 4,
-        arrows: false
-    });
-    $('.about-slider').slick({
-        slidesToShow: 1,
         arrows: false,
-        asNavFor: '.about-bottom'
+        responsive: [
+            {
+                breakpoint: 1439,
+                settings: {
+                    slidesToShow: 3,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false,
+                    variableWidth: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false,
+                    variableWidth: true
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
     });
-    $('.about-bottom').slick({
-        slidesToShow: 4,
-        arrows: true,
-        asNavFor: '.about-slider',
-        focusOnSelect: true
-    });
+    // $('.about-slider').slick({
+    //     slidesToShow: 1,
+    //     arrows: false,
+    //     asNavFor: '.about-bottom'
+    // });
+    // $('.about-bottom').slick({
+    //     slidesToShow: 4,
+    //     arrows: true,
+    //     asNavFor: '.about-slider',
+    //     focusOnSelect: true
+    // });
     $('.slider1').slick({
         slidesToShow: 1,
         vertical: true,
@@ -132,7 +168,17 @@ $(document).ready(function() {
         slidesToShow: 1,
         arrows: false,
         speed: 1000,
+        touchMove: false,
+        swipeToSlide: true,
+        draggable: false,
+        swipe: false,
+        variableWidth: true,
         asNavFor: ".plan-number"
+    });
+    $('.third-slider').slick({
+        slidesToShow: 1,
+        arrows: false,
+        speed: 1000,
     });
     $('.plan-number').slick({
         slidesToShow: 1,
@@ -169,11 +215,13 @@ $(document).ready(function() {
        setTimeout(function(){
            $('.menu-close').addClass('active');
            $('.down-text').addClass('active');
+           $('.right-line').addClass('active');
         }, 500)
     });
     $('.menu-close').click(function(){
             $('.menu-close').removeClass('active');
             $('.down-text').removeClass('active');
+            $('.right-line').removeClass('active');
         setTimeout(function(){
             $('.menu-overlay').removeClass('active');
         }, 500)
@@ -212,5 +260,12 @@ $(document).mouseup(function (e) {
     var container = $(".popup");
     if (container.has(e.target).length === 0){
         container.removeClass('active');
+    }
+});
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 50) {
+        $('.header_fixed').addClass('active')
+    } else {
+        $('.header_fixed').removeClass('active')
     }
 });
