@@ -463,7 +463,7 @@ img
 			padding: 50px 40px 30px 45px
 			display: flex
 			flex-direction: column
-			justify-content: space-between
+			justify-content: flex-start
 			height: 410px
 			cursor: pointer
 			transition: all .5s ease
@@ -479,9 +479,11 @@ img
 			text-transform: uppercase
 			letter-spacing: 5.98px
 			margin-top: 35px
+			min-height: 44px
 		&-slide
-			transform: translateY(195px)
+			transform: translateY(82%)
 			transition: all .5s ease
+			height: 270px
 			&.active
 				transform: translateY(0)
 		&-text
@@ -1282,10 +1284,10 @@ img
 			background: url(../img/plus.jpg) repeat
 			z-index: 1
 		&-content
-			width: 1440px
-			position: absolute
-			top: calc(50% - 220px)
-			left: 0
+			width: 1100px
+			//position: absolute
+			//top: calc(50% - 220px)
+			//right: 0
 	&-slider
 		position: relative
 		z-index: 2
@@ -1363,8 +1365,8 @@ img
 		position: absolute
 		width: 210px
 		height: 175px
-		right: 865px
-		bottom: 10%
+		right: 838px
+		bottom: 9%
 .room
 	height: 100vh
 	width: 100%
@@ -1597,6 +1599,6 @@ img
 	color: #ffffff
 .news-slider_mob
 	display: none
-.plan-slider-item img
-	max-width: 980px
+//.plan-slider-item img
+//	max-width: 980px
 @import "media" // Всегда в конце

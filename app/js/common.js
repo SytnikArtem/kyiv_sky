@@ -172,7 +172,7 @@ $(document).ready(function() {
         swipeToSlide: true,
         draggable: false,
         swipe: false,
-        variableWidth: true,
+        // variableWidth: true,
         asNavFor: ".plan-number"
     });
     $('.third-slider').slick({
